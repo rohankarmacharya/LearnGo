@@ -2,7 +2,6 @@ package main
 
 import (
 	"fmt"
-	"time"
 )
 
 func main() {
@@ -24,12 +23,27 @@ func main() {
 	// }
 
 	//multiple condition switch
-	switch time.Now().Weekday() {
-	case time.Saturday, time.Sunday:
-		fmt.Println("It's weekend")
+	// switch time.Now().Weekday() {
+	// case time.Saturday, time.Sunday:
+	// 	fmt.Println("It's weekend")
 
-	default:
-		fmt.Println("It's work day")
+	// default:
+	// 	fmt.Println("It's work day")
+	// }
+
+	//type switch
+
+	whoAmI := func(i interface{}) {
+		switch v := i.(type) {
+		case int:
+			fmt.Printf("I'm an integer and my value is %d\n", v)
+		case string:
+			fmt.Printf("I'm a string and my value is %s\n", v)
+		default:
+			fmt.Println("I'm an unknown type", v)
+		}
 	}
-
+	whoAmI(7)
+	whoAmI("golang")
+	whoAmI(true)
 }
