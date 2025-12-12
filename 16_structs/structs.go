@@ -59,5 +59,4 @@ func main() {
 
 	myOrder := newOrder("1", 99.99, "received")
 	fmt.Println(myOrder)
-
 }
